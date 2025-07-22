@@ -3,7 +3,7 @@
 
 ##   Hi there, 
 
-#  *I'm Ed H*
+#  *I'm NQMVD*
 
 ##   • Software Engineer
 ##   • Digital Designer
@@ -12,5 +12,5 @@
 
 
 
-### Welcome to ED-Linux 1.0 LTS
+### Welcome to RETRO-TERM 1.0 LTS
 ### →→ Scroll or type "help" to get started
