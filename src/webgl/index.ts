@@ -66,7 +66,7 @@ export default function WebGL() {
     const scene = new THREE.Scene();
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.55);
     scene.add(ambientLight);
-    scene.background = new THREE.Color(0xf6d4b1);
+    scene.background = new THREE.Color(0x18181b);
 
     /**
      * Camera
@@ -189,9 +189,11 @@ export default function WebGL() {
     );
     plane.scale.x = 1.33;
 
-    // Materials
-    const computerMaterial = new THREE.MeshBasicMaterial({
+    // Materials - Using MeshLambertMaterial for better lighting control
+    const computerMaterial = new THREE.MeshLambertMaterial({
       map: assists.bakeTexture,
+      color: 0x8888aa, // Cool blue-gray tint to counteract warm reflections
+      emissive: 0x0a0a15, // Slight dark blue emissive to add coolness
     });
 
     /**
@@ -212,7 +214,9 @@ export default function WebGL() {
     computerGroup.add(assists.keyboardMesh);
 
     assists.shadowPlaneMesh.material = new THREE.MeshBasicMaterial({
-      map: assists.bakeFloorTexture,
+      color: 0x27272a, // Dark gray to match the theme
+      transparent: true,
+      opacity: 0.3, // Make it subtle like a shadow
     });
     computerGroup.add(assists.shadowPlaneMesh);
 
